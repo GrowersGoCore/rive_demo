@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rivebloc_test/background/view/background_page.dart';
 import 'package:rivebloc_test/chest/view/chest_page.dart';
+import 'package:rivebloc_test/multyrive/view/multy_page.dart';
 import 'package:rivebloc_test/plant/view/plant_page.dart';
 
 class HomeView extends StatelessWidget {
@@ -48,6 +49,17 @@ class HomeView extends StatelessWidget {
                 );
               },
               child: Text('Planta'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const MultianimationPage(),
+                  )
+                );
+              },
+              child: const Text('Multiple Animations')
             ),
           ],
         ),
