@@ -32,7 +32,7 @@ class _MultianimationViewState extends State<MultianimationView> {
                 Expanded(
                   child: cubit.backgroundArtboards.isNotEmpty
                       ? RiveAnimation.asset(
-                          'assets/multy.riv',
+                          'assets/multy2.riv',
                           artboard: cubit
                               .backgroundArtboards[sliderValue.toInt()],
                           fit: BoxFit.contain,

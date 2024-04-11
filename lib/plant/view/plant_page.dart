@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rivebloc_test/plant/cubit/plant_cubit.dart';
 import 'package:rivebloc_test/plant/view/plant_view.dart';
 
+
+
 class PlantPage extends StatelessWidget {
   const PlantPage({Key? key}) : super(key: key);
   

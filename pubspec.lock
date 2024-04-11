@@ -411,18 +411,18 @@ packages:
     dependency: "direct main"
     description:
       name: rive
-      sha256: "166019487e8bfa6525d4537bfd494deb4f306e32f97a7f50ff452b44ab6b72ea"
+      sha256: ec44b6cf7341e21727c4b0e762f4ac82f9a45f7e52df3ebad2d1289a726fbaaf
       url: "https://pub.dev"
     source: hosted
-    version: "0.11.11"
+    version: "0.13.1"
   rive_common:
     dependency: transitive
     description:
       name: rive_common
-      sha256: "83af8b500ad4d23930397229c7ed520e266eb851690a8621afa6cbd782aeac87"
+      sha256: "0f070bc0e764c570abd8b34d744ef30d1292bd4051f2e0951bbda755875fce6a"
       url: "https://pub.dev"
     source: hosted
-    version: "0.2.3"
+    version: "0.3.3"
   shelf:
     dependency: transitive
     description:
@@ -592,10 +592,10 @@ packages:
     dependency: transitive
     description:
       name: web_socket_channel
-      sha256: "1d8e795e2a8b3730c41b8a98a2dff2e0fb57ae6f0764a1c46ec5915387d257b2"
+      sha256: "58c6666b342a38816b2e7e50ed0f1e261959630becd4c879c4f26bfa14aa5a42"
       url: "https://pub.dev"
     source: hosted
-    version: "2.4.4"
+    version: "2.4.5"
   webdriver:
     dependency: transitive
     description:

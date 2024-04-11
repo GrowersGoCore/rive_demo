@@ -1,17 +1,19 @@
-import 'package:flutter/services.dart';
 import 'package:bloc/bloc.dart';
 import 'package:rive/rive.dart';
+import 'package:rivebloc_test/multyrive/multyService/riveservice.dart';
+
+
 
 class MultianimationCubit extends Cubit<double> {
-  MultianimationCubit() : super(0);
-
+   late RiveService service;
+  MultianimationCubit([RiveService? _service]) : super(0) {
+    service = _service ?? RiveService();
+  }
   List<String> backgroundArtboards = [];
   double _sliderMax = 100;
 
-void loadArtboardNames() async {
-  final RiveFile riveFile =
-      RiveFile.import(await rootBundle.load('assets/multy.riv'));
-  
+Future<void> loadArtboardNames() async {
+  final RiveFile riveFile = await service.getFile();
   backgroundArtboards = riveFile.artboards
       .map((artboard) => artboard.name)
       .where((name) => name.startsWith('tomato_'))
