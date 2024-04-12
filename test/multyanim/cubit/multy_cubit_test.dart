@@ -18,6 +18,7 @@ void main() {
       cubit = MultianimationCubit();
       mockRiveFile = MockRiveFile();
       mockRiveService=MockRiveService();
+      //cubit = MultianimationCubit(mockRiveService);
       TestWidgetsFlutterBinding.ensureInitialized();
     });
     tearDown(() {
@@ -43,12 +44,12 @@ void main() {
   // Configurar mockRiveService y mockRiveFile
   when(() => mockRiveService.getFile()).thenAnswer((_) async => mockRiveFile);
   await cubit.loadArtboardNames(); // Llamada al método, asegúrate de esperar la promesa
-  expect(cubit.backgroundArtboards, artboards);
+  expect(cubit.state.backgroundArtboards, artboards);
 });
     test('updateSliderValue emits correct value', () {
       const value = 5.0;
       cubit.updateSliderValue(value); //Method call
-      expect(cubit.state, value); //Verify that the emitted value is correct
+      expect(cubit.state.sliderValue, value); //Verify that the emitted value is correct
     });
   });
 }

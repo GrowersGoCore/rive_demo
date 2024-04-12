@@ -23,27 +23,29 @@ class _MultianimationViewState extends State<MultianimationView> {
       appBar: AppBar(
         title: const Text('Multiple Animations'),
       ),
-      body: BlocBuilder<MultianimationCubit, double>(
-        builder: (context, sliderValue) {
+      body: BlocBuilder<MultianimationCubit, MultianimationState>(
+        builder: (context, multianimationState) {
           final cubit = BlocProvider.of<MultianimationCubit>(context);
           return Center(
             child: Column(
               children: [
                 Expanded(
-                  child: cubit.backgroundArtboards.isNotEmpty
+                  child: multianimationState.backgroundArtboards.isNotEmpty
                       ? RiveAnimation.asset(
                           'assets/multy2.riv',
-                          artboard: cubit
-                              .backgroundArtboards[sliderValue.toInt()],
+                          artboard: multianimationState
+                              .backgroundArtboards[multianimationState.sliderValue.toInt()],
                           fit: BoxFit.contain,
                         )
                       : const CircularProgressIndicator(),
                 ),
                 Slider(
-                  value: sliderValue,
+                  value: multianimationState.sliderValue,
                   min: 0,
-                  max: cubit.getSliderMax(),
-                  divisions: cubit.getSliderDivisions(),
+                  max: multianimationState.backgroundArtboards.isNotEmpty
+                      ? multianimationState.backgroundArtboards.length - 1 : 100,
+                  divisions:  multianimationState.backgroundArtboards.isNotEmpty
+                      ? multianimationState.backgroundArtboards.length - 1 : 100,
                   onChanged: (value) {
                     cubit.updateSliderValue(value);
                   },
